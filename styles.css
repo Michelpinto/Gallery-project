@@ -1,0 +1,169 @@
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%;
+}
+
+@media only screen and (max-width: 75em) {
+  html {
+    font-size: 50%;
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  html {
+    font-size: 42.5%;
+  }
+}
+
+body {
+  font-family: 'Montserrat', sans-serif;
+  margin: 0 auto;
+  max-width: 140rem;
+  min-height: 100vh;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: #1d1d1d;
+}
+
+.heading {
+  font-size: 4.5rem;
+  margin: 9rem 0;
+}
+
+.tabs {
+  display: flex;
+  flex-direction: row;
+  gap: 6rem;
+}
+
+@media only screen and (max-width: 37.5em) {
+  .tabs {
+    margin: 0 3rem;
+  }
+}
+
+.btn {
+  font-size: 2.4rem;
+  font-weight: 500;
+  background-color: #fff;
+  color: #a9a9a9;
+  border: none;
+  outline: none;
+  cursor: pointer;
+
+  transition: all 0.5s;
+}
+
+.btn:hover {
+  color: #1d1d1d;
+  transform: translateY(-3px);
+}
+
+.active {
+  color: #1d1d1d;
+  transform: translateY(-3px);
+}
+
+.pictures__container {
+  margin: 5rem;
+  /* display: flex;
+  flex-flow: wrap;
+  align-items: center;
+  width: auto; */
+  display: grid;
+  grid-template-columns: repeat(3, 34.5rem);
+  grid-template-rows: repeat(3, 26.5rem);
+  gap: 3rem;
+  align-items: center;
+}
+
+@media only screen and (max-width: 56.25em) {
+  .pictures__container {
+    display: grid;
+    grid-template-columns: repeat(2, 34.5rem);
+  }
+}
+
+@media only screen and (max-width: 37.5em) {
+  .pictures__container {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+.pictures__container img {
+  width: 34.5rem;
+  max-width: 100%;
+  height: 26.5rem;
+  border-radius: 5px;
+  transition: all 0.2s;
+  cursor: pointer;
+}
+
+img:hover {
+  opacity: 0.8;
+}
+
+.popup {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  display: none;
+}
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(1.5px);
+  z-index: 100;
+  display: none;
+}
+
+.btn-close {
+  align-self: flex-end;
+  margin-right: 5rem;
+  font-size: 4rem;
+  width: 4rem;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  background: none;
+  color: #fff;
+}
+
+.popup img {
+  width: 85rem;
+  height: 65rem;
+  border-radius: 5px;
+  cursor: zoom-out;
+  animation: scale 0.5s;
+}
+
+@keyframes scale {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
