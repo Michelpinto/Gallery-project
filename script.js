@@ -92,7 +92,6 @@ tabs.addEventListener('click', function (e) {
 function btnAtive(e) {
   e.preventDefault();
   btn.classList.add('active');
-  // btn.classList.remove('active');
 }
 
 // Events //
